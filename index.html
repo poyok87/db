@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="An interactive database normalization lab with twenty examples from an unorganized table to 1NF, 2NF, and 3NF." />
+    <title>NormaLab — Database Normalization Explorer</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#lab">Skip to the lab</a>
+
+    <header class="topbar">
+      <a class="brand" href="#top" aria-label="NormaLab home">
+        <span class="brand-mark">N</span>
+        <span>NORMALAB</span>
+      </a>
+      <p>Interactive database normalization guide</p>
+      <a class="top-cta" href="#lab">Start learning <span>↓</span></a>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow"><span>DATABASE DESIGN</span> INTERACTIVE LAB</p>
+          <h1>From messy data<br />to a <em>clean structure.</em></h1>
+          <p class="hero-intro">Follow real-world tables from an unorganized format through First, Second, and Third Normal Form.</p>
+        </div>
+        <div class="hero-stats" aria-label="Module summary">
+          <div><strong>20</strong><span>real-world examples</span></div>
+          <div><strong>4</strong><span>stages per example</span></div>
+          <div><strong>80</strong><span>table transformations</span></div>
+        </div>
+        <div class="hero-watermark" aria-hidden="true">RAW → 1 → 2 → 3</div>
+      </section>
+
+      <section class="journey" aria-label="Normalization journey">
+        <div><b>00</b><span><strong>RAW</strong> Repeating groups</span></div>
+        <div><b>01</b><span><strong>1NF</strong> Atomic values</span></div>
+        <div><b>02</b><span><strong>2NF</strong> No partial dependencies</span></div>
+        <div><b>03</b><span><strong>3NF</strong> No transitive dependencies</span></div>
+      </section>
+
+      <section class="lab" id="lab">
+        <aside class="example-panel" aria-label="Examples">
+          <div class="panel-heading">
+            <p class="kicker">EXAMPLE LIBRARY</p>
+            <span id="example-count">01 / 20</span>
+          </div>
+          <label class="mobile-label" for="example-select">Choose an example</label>
+          <select id="example-select" class="example-select" aria-label="Choose an example"></select>
+          <div class="example-list" id="example-list"></div>
+        </aside>
+
+        <article class="lesson-card" aria-live="polite">
+          <header class="lesson-header">
+            <div>
+              <p class="kicker" id="lesson-kicker"></p>
+              <h2 id="lesson-title"></h2>
+              <p id="lesson-context"></p>
+            </div>
+            <div class="progress-ring" id="progress-ring" aria-label="Learning progress">
+              <div><strong id="progress-value">3%</strong><span>explored</span></div>
+            </div>
+          </header>
+
+          <div class="stage-tabs" id="stage-tabs" role="tablist" aria-label="Normalization stages"></div>
+
+          <section class="stage-overview">
+            <div class="stage-copy">
+              <p class="stage-label" id="stage-label"></p>
+              <h3 id="stage-title"></h3>
+              <p id="stage-description"></p>
+              <div class="rule-card">
+                <span id="rule-caption"></span>
+                <strong id="stage-rule"></strong>
+                <code id="stage-dependency"></code>
+              </div>
+            </div>
+            <div class="transformation">
+              <div class="transformation-heading"><span>WHAT CHANGES</span><strong id="stage-action"></strong></div>
+              <div class="change-row problem"><span>Problem</span><p id="stage-before"></p></div>
+              <div class="down-arrow" aria-hidden="true">↓</div>
+              <div class="change-row result"><span>Result</span><p id="stage-after"></p></div>
+            </div>
+          </section>
+
+          <section class="table-section">
+            <div class="table-section-heading">
+              <div><p class="kicker">TABLE VIEW</p><h3 id="table-count"></h3></div>
+              <div class="legend"><span><i class="dot pk"></i> Primary key</span><span><i class="dot fk"></i> Foreign key</span></div>
+            </div>
+            <div class="table-grid" id="table-grid"></div>
+          </section>
+
+          <section class="knowledge-check">
+            <div class="question-mark">?</div>
+            <div>
+              <p class="kicker">CHECK YOUR UNDERSTANDING</p>
+              <h3 id="quiz-question"></h3>
+              <p class="quiz-answer" id="quiz-answer" hidden></p>
+            </div>
+            <button id="answer-button" type="button" aria-expanded="false">Show answer <span>↓</span></button>
+          </section>
+
+          <footer class="lesson-footer">
+            <button class="previous" id="previous-button" type="button">← Previous</button>
+            <div class="step-counter"><strong id="visited-count">1</strong><span>of 80 stages<br />explored</span></div>
+            <button class="next" id="next-button" type="button">Continue to 1NF <span>→</span></button>
+          </footer>
+        </article>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-brand"><span class="brand-mark">N</span><strong>NORMALAB</strong></div>
+      <p>Learn data structure by watching it change.</p>
+      <a href="#top">Back to top ↑</a>
+    </footer>
+  </body>
+</html>
